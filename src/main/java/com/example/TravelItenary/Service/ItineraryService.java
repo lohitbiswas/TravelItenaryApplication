@@ -28,6 +28,11 @@ public class ItineraryService {
         return itineraryRepository.findByUserId(userId);
     }
 
+
+    public List<Itinerary> getItinerariesByDestinationId(String destinationId) {
+        return itineraryRepository.findByDestinationId(destinationId);
+    }
+
     public Itinerary updateItinerary(String id, Itinerary itinerary) {
         if (itineraryRepository.existsById(id)) {
             itinerary.setId(id);

@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface ItineraryRepository extends MongoRepository<Itinerary, String> {
     List<Itinerary> findByUserId(String userId);
+    List<Itinerary> findByDestinationId(String userId);
 }

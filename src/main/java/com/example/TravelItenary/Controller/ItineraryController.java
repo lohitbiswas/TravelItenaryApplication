@@ -40,6 +40,12 @@ public class ItineraryController {
         return new ResponseEntity<>(itineraries, HttpStatus.OK);
     }
 
+    @GetMapping("/itineraries/destination/{destinationId}")
+    public ResponseEntity<List<Itinerary>> getItinerariesByDestinationId(@PathVariable String destinationId) {
+        List<Itinerary> itineraries = itineraryService.getItinerariesByDestinationId(destinationId);
+        return new ResponseEntity<>(itineraries, HttpStatus.OK);
+    }
+
     // Endpoint to update an existing itinerary
     @PutMapping("/itineraries/{id}")
     public ResponseEntity<Itinerary> updateItinerary(@PathVariable String id, @RequestBody Itinerary itinerary) {
