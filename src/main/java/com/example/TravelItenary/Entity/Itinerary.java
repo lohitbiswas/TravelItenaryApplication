@@ -20,7 +20,7 @@ public class Itinerary {
 
     @Id
     private String id;
-
+    private String destinationId;
     private String userId;
     private String name;
     private List<String> destinations; // List of destination IDs
